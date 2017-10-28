@@ -1,6 +1,6 @@
-FROM golang:1.8-alpine
+FROM golang:1.9-alpine
 
-ARG VIPS_VERSION=8.5.5
+ARG VIPS_VERSION=8.5.9
 
 RUN apk update && apk add --no-cache openssl ca-certificates && mkdir -p ${GOPATH}/src && \
     wget -O- https://github.com/jcupitt/libvips/releases/download/v${VIPS_VERSION}/vips-${VIPS_VERSION}.tar.gz | tar xzC /tmp && \
